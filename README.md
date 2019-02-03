@@ -28,17 +28,22 @@ THE USER INTERFACE
 * Shortly after a word chip appears, it will sprout a smaller (blue or red) chip indicating the points total for the word. A normal word will contain a blue chip with a number indicating its score. But a gibberish, nonexistent word will instead contain a red chip with an "X".
 * Once the timer runs out, the textbox is no longer usable.
 
+The Pearson Dictionary API
+
+What service do we need from Pearson API for? A dictionary. Our way of checking the validity of the user's word submissions will be to look up each word in the dictionary and see if it exists.
+
 
 Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-Download a copy from the Github: https://github.com/srpillai/word-up.git
+* Download a copy from the Github: https://github.com/srpillai/word-up.git
 
 Prerequisites
 What things you need to install the software and how to install them
 Give examples
 
-You will need a chrome or similar browser
+* You will need a chrome or similar browser
+* This game assumes that Pearson Dictionary API is available and working
 
 Installing
 A step by step series of examples that tell you how to get a development env running
@@ -49,11 +54,12 @@ until finished
 End with an example of getting some data out of the system or using it for a little demo
 
 **
-Clone or Download a copy from the Github: https://github.com/srpillai/word-up.git
-open the index.html in any browser
+* Clone or Download a copy from the Github: https://github.com/srpillai/word-up.git
+* open the index.html in any browser
 **
 
 Built With
+
 * HTML - The web language
 * CSS - for styling
 * JQuery and Bootstrap - Used for styling also
@@ -61,15 +67,14 @@ Built With
 
 Contributing
 
-Created as part of Launchcode unit-3 front-end development course
-
+* Created as part of Launchcode unit-3 front-end development course
 
 Authors
 * Radhakrishnan Pillai - Initial work - LaunchCoder 2019
 
 License
-This project is licensed under the MIT License 
+* This project is licensed under the MIT License 
 
 Acknowledgments
 * Launchcode Unit-3 Team
-* Inspiration: Launchcode, Kansas City, MO
+* Inspiration: LC 101 - Launchcode, Kansas City, MO
