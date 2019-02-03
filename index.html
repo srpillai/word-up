@@ -1,3 +1,32 @@
+<!--
+This is part of LaunchCode Unit-3 class for front-end development.
+Uses HTML, CSS styling, AJAX, Bootstrap and Javascript.
+Created by Radhakrishnan Pillai for LaunchCode Unit-3.
+-->
+
+<!--
+    THE USER INTERFACE
+
+When the user clicks New Game, the letters are revealed and she can begin typing words.
+The letters are presented as little "chips" (I am going to refer to 
+these things as chips throughout the assignment).
+Each letter chip contains a smaller chip indicating its points value.
+As the user types, the page provides continuous feedback. Specifically, if the word 
+she is currently typing contains any letters that are not allowed, then 
+the disallowed letters appear as red chips underneath the textbox.
+If the user tries to submit (presses Enter after typing) a word that 
+contains disallowed letters, then the textbox simply clears and the word 
+is not submitted.
+Once the user does submit a word containing only valid letters, it appears 
+in a chip below the textbox.
+Shortly after a word chip appears, it will sprout a smaller (blue or red) 
+chip indicating the points total for the word. A normal word will contain 
+a blue chip with a number indicating its score. But a gibberish, nonexistent 
+word will instead contain a red chip with an "X".
+Once the timer runs out, the textbox is no longer usable.
+
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +73,7 @@
             <!-- TODO 1
             Make a "New Game" button
             -->
+             <button id="new-game-button" >New Game</button>
         </section>
 
         <!-- things that should not show up until the (first) game has started -->
@@ -52,10 +82,12 @@
             <!-- TODO 4
             Add some instructions so the user knows what to do.
             -->
+             <p>Spell as many words as you can, using only these letters:</p>
 
             <!-- TODO 5
             Make an empty container to hold the letter chips.
             -->
+            <div id="allowed-letters"></div>
 
             <!-- the form via which the user attempts to submit new words -->
             <form id="word-attempt-form">
@@ -64,11 +96,13 @@
 
                 <br>
                 <!-- red feedback chips will be injected here -->
+                <div id="feedback"></div>
             </form>
 
             <!-- a container to display the user's word submissions -->
             <div id="word-submissions">
                 <!-- word submission chips will be injected here -->
+
             </div>
         </section>
     </main>

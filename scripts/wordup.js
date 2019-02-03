@@ -1,4 +1,22 @@
+/** 
+This is part of LaunchCode Unit-3 class for front-end development.
+Uses HTML, CSS styling, AJAX, Bootstrap and Javascript.
+Created by Radhakrishnan Pillai for LaunchCode Unit-3
+*/
 
+/*
+RULES OF THE GAME
+
+The object of the game is to spell as many words as possible before time runs out, using only the 
+letters specified.
+A word is invalid if it contains any letters that aren't in the specified set of allowed letters.
+A word is also invalid if it turns out not to be a real word.
+Your total score is the sum of the scores of all your valid words.
+The score of each word is the sum of the scores of each of its letters.
+The score of a letter is simply its score from the boardgame Scrabble.
+Unlike in Scrabble, you may use the same letter more than once in a single word.
+
+*/
 
 // ----------------- MODEL -----------------
 
@@ -53,7 +71,9 @@ function addNewWordSubmission(word) {
     // Do we already have a wordSubmission with this word?
     // TODO 21
     // replace the hardcoded 'false' with the real answer
-    var alreadyUsed = false;
+    //var alreadyUsed = false;
+    var inList = model.wordSubmissions.find( x => x.word === word );;
+    var alreadyUsed = inList === undefined ? false : true;
 
     // if the word is valid and hasn't already been used, add it
     if (containsOnlyAllowedLetters(word) && alreadyUsed == false) {
@@ -74,7 +94,8 @@ function checkIfWordIsReal(word) {
     // make an AJAX call to the Pearson API
     $.ajax({
         // TODO 13 what should the url be?
-        url: "www.todo13.com",
+        //url: "www.todo13.com",
+        url: "http://api.pearson.com/v2/dictionaries/ldoce5/entries?headword=" + word,
         success: function(response) {
             console.log("We received a response from Pearson!");
 
@@ -85,11 +106,16 @@ function checkIfWordIsReal(word) {
             // Replace the 'true' below.
             // If the response contains any results, then the word is legitimate.
             // Otherwise, it is not.
-            var theAnswer = true;
+            //var theAnswer = true;
+            var theAnswer = response.count > 0 ? true : false;
 
             // TODO 15
             // Update the corresponding wordSubmission in the model
-
+            model.wordSubmissions.forEach( (submission) => {
+                if ( submission.word === word ) {
+                    submission.isRealWord = theAnswer;
+                } 
+            })
 
             // re-render
             render();
@@ -115,6 +141,7 @@ function render() {
 
     // TODO 2
     // Update the curent time remaining on the scoreboard.
+    $('#time-remaining').text(model.secondsRemaining);
 
 
     // if the game has not started yet, just hide the #game container and exit
@@ -128,6 +155,9 @@ function render() {
     // clear stuff
     $("#allowed-letters").empty();
     $("#word-submissions").empty();
+    $('#feedback').empty();
+    $('#textbox').removeClass('bad-attempt');
+    $('#textbox')[0].disabled = false;
     // TODO 10
     // Add a few things to the above code block (underneath "// clear stuff").
 
@@ -141,12 +171,17 @@ function render() {
 
     // TODO 11
     // Render the word submissions
+    model.wordSubmissions.forEach( x => {
+        // var wordSubmissions = x.word.split('').map(letterChip);
+        $('#word-submissions').append(wordSubmissionChip(x));
+    })
 
 
     // Set the value of the textbox
     $("#textbox").val(model.currentAttempt);
     // TODO 3
     // Give focus to the textbox.
+     $("#textbox").focus();
 
 
     // if the current word attempt contains disallowed letters,
@@ -160,6 +195,7 @@ function render() {
 
         // TODO 8
         // append the red letter chips to the form
+        $('#feedback').empty().append(redLetterChips);
 
     }
 
@@ -168,6 +204,8 @@ function render() {
     if (gameOver) {
         // TODO 9
         // disable the text box and clear its contents
+        $('#textbox')[0].disabled = true;
+        $('#textbox')[0].value = '';
 
     }
 }
@@ -208,9 +246,18 @@ function wordSubmissionChip(wordSubmission) {
 
         // TODO 18
         // give the scoreChip appropriate css classes
+        if (wordSubmission.isRealWord){
+            var score = wordScore(wordSubmission.word);
+            var scoreChip = $("<span></span>").text(score);
+            scoreChip.attr("class", "score-chip good-word");
+        } else {
+            var scoreChip = $("<span></span>").text("X");
+            scoreChip.attr("class", "score-chip bad-word");
+        }
 
         // TODO 16
         // append scoreChip into wordChip
+        wordChip.append(scoreChip);
 
     }
 
@@ -242,6 +289,9 @@ $(document).ready(function() {
     // Add another event handler with a callback function.
     // When the textbox content changes,
     // update the .currentAttempt property of the model and re-render
+    $('#textbox').on('input', function () {
+        model.currentAttempt = $('#textbox').val();
+    })
 
 
     // when the form is submitted
@@ -280,7 +330,8 @@ function isDisallowedLetter(letter) {
     // TODO 7
     // This should return true if the letter is not an element of
     // the .allowedLetters list in the model
-    return false;
+    //return false;
+    return model.allowedLetters.indexOf(letter) < 0 ? true : false;
 }
 
 /**
@@ -299,7 +350,8 @@ function disallowedLettersInWord(word) {
 function containsOnlyAllowedLetters(word) {
     // TODO 12
     // Return the actual answer.
-    return true;
+    //return true;
+    return disallowedLettersInWord(word).length > 0 ? false : true;
 }
 
 /**
@@ -331,6 +383,7 @@ function wordScore(word) {
     // Replace the empty list below.
     // Map the list of letters into a list of scores, one for each letter.
     var letterScores = [];
+    letterScores = letters.map( letter => letterScore(letter) );
 
     // return the total sum of the letter scores
     return letterScores.reduce(add, 0);
@@ -354,7 +407,9 @@ function currentScore() {
 
     // TODO 20
     // return the total sum of the word scores
-    return 0;
+    //return 0;
+    return wordScores.reduce(add, 0);
+
 }
 
 
