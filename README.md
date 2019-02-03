@@ -1,8 +1,7 @@
 # word-up
 Last assignment for the Front-end Skill Track
 
-Word Up Game
-
+The Word Up Game
 
 This game you are trying to use is called Word Up!, and it is best described as a cross between Scrabble, Solitaire, and the Hunger Games in Space.
 
@@ -34,29 +33,24 @@ What service do we need from Pearson API for? A dictionary. Our way of checking 
 
 
 Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes:
 
 * Download a copy from the Github: https://github.com/srpillai/word-up.git
 
 Prerequisites
-What things you need to install the software and how to install them
-Give examples
+
+Things you need to install the software and how to install them:
 
 * You will need a chrome or similar browser
 * This game assumes that Pearson Dictionary API is available and working
 
 Installing
-A step by step series of examples that tell you how to get a development env running
-Say what the step will be
-Give the example
-And repeat
-until finished
-End with an example of getting some data out of the system or using it for a little demo
 
-**
+A step by step examples that tell you how to get the game going:
+
 * Clone or Download a copy from the Github: https://github.com/srpillai/word-up.git
 * open the index.html in any browser
-**
 
 Built With
 

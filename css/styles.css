@@ -1,3 +1,9 @@
+/*
+This is part of LaunchCode Unit-3 class for front-end development.
+Uses HTML, CSS styling, AJAX, Bootstrap and Javascript.
+Created by Radhakrishnan Pillai for LaunchCode Unit-3.
+*/
+
 body {
     text-align: center;
     color: gray;
@@ -66,7 +72,6 @@ input:focus {
     border: 2px solid #4285F4; /* Bootstrap "primary" blue */
     outline-color: #4285f4; /* outline is the fuzzy "glow" */
 }
-
 
 .score-chip {
     margin: 5px;

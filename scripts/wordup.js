@@ -5,17 +5,26 @@ Created by Radhakrishnan Pillai for LaunchCode Unit-3
 */
 
 /*
-RULES OF THE GAME
+   RULES OF THE GAME
 
-The object of the game is to spell as many words as possible before time runs out, using only the 
-letters specified.
-A word is invalid if it contains any letters that aren't in the specified set of allowed letters.
-A word is also invalid if it turns out not to be a real word.
-Your total score is the sum of the scores of all your valid words.
-The score of each word is the sum of the scores of each of its letters.
-The score of a letter is simply its score from the boardgame Scrabble.
-Unlike in Scrabble, you may use the same letter more than once in a single word.
+* The object of the game is to spell as many words as possible before time runs 
+  out, using only the letters specified.
+* A word is invalid if it contains any letters that aren't in the specified 
+  set of allowed letters.
+* A word is also invalid if it turns out not to be a real word.
+* Your total score is the sum of the scores of all your valid words.
+* The score of each word is the sum of the scores of each of its letters.
+* The score of a letter is simply its score from the boardgame Scrabble.
+* Unlike in Scrabble, you may use the same letter more than once in a single word.
 
+*/
+
+/* 
+The Pearson Dictionary API
+
+What service do we need from Pearson API for? A dictionary. One way of checking 
+the validity of the user's word submissions will be to look up each word in the 
+dictionary and see if it exists.
 */
 
 // ----------------- MODEL -----------------
