@@ -16,7 +16,8 @@ RULES OF THE GAME
 * The score of each word is the sum of the scores of each of its letters.
 * The score of a letter is simply its score from the boardgame Scrabble.
 * Unlike in Scrabble, you may use the same letter more than once in a single word.
-* 
+
+
 THE USER INTERFACE
 * When the user clicks New Game, the letters are revealed and she can begin typing words.
 * The letters are presented as little "chips" (I am going to refer to these things as chips throughout the assignment).
@@ -67,7 +68,7 @@ Authors
 * Radhakrishnan Pillai - Initial work - LaunchCoder 2019
 
 License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License 
 
 Acknowledgments
 * Launchcode Unit-3 Team
