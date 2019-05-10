@@ -1,11 +1,11 @@
 # word-up
-Last assignment for the Front-end Skill Track
+Last assignment for the Front-end Skill Track (Unit 3)
 
-The Word Up Game
+## The Word Up Game
 
 This game you are trying to use is called Word Up!, and it is best described as a cross between Scrabble, Solitaire, and the Hunger Games in Space.
 
-Background
+## Background
 
 RULES OF THE GAME
 * The object of the game is to spell as many words as possible before time runs out, using only the letters specified.
@@ -17,7 +17,8 @@ RULES OF THE GAME
 * Unlike in Scrabble, you may use the same letter more than once in a single word.
 
 
-THE USER INTERFACE
+##  THE USER INTERFACE
+
 * When the user clicks New Game, the letters are revealed and she can begin typing words.
 * The letters are presented as little "chips" (I am going to refer to these things as chips throughout the assignment).
 * Each letter chip contains a smaller chip indicating its points value.
@@ -27,48 +28,51 @@ THE USER INTERFACE
 * Shortly after a word chip appears, it will sprout a smaller (blue or red) chip indicating the points total for the word. A normal word will contain a blue chip with a number indicating its score. But a gibberish, nonexistent word will instead contain a red chip with an "X".
 * Once the timer runs out, the textbox is no longer usable.
 
-The Pearson Dictionary API
+### The Pearson Dictionary API
 
 What service do we need from Pearson API for? A dictionary. Our way of checking the validity of the user's word submissions will be to look up each word in the dictionary and see if it exists.
 
 
-Getting Started
+## Getting Started:
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes:
 
 * Download a copy from the Github: https://github.com/srpillai/word-up.git
 
-Prerequisites
+## Prerequisites:
 
 Things you need to install the software and how to install them:
 
 * You will need a chrome or similar browser
 * This game assumes that Pearson Dictionary API is available and working
 
-Installing
+## Installing:
 
 A step by step examples that tell you how to get the game going:
 
 * Clone or Download a copy from the Github: https://github.com/srpillai/word-up.git
 * open the index.html in any browser
 
-Built With
+## Built With
 
 * HTML - The web language
 * CSS - for styling
 * JQuery and Bootstrap - Used for styling also
 * Javascript - for interactivity
 
-Contributing
+## Contributing:
 
 * Created as part of Launchcode unit-3 front-end development course
 
-Authors
+## Author:
+
 * Radhakrishnan Pillai - Initial work - LaunchCoder 2019
 
-License
+## License:
+
 * This project is licensed under the MIT License 
 
-Acknowledgments
+## Acknowledgments:
+
 * Launchcode Unit-3 Team
 * Inspiration: LC 101 - Launchcode, Kansas City, MO

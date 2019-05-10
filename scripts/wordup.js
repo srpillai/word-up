@@ -1,4 +1,4 @@
-/** 
+/*
 This is part of LaunchCode Unit-3 class for front-end development.
 Uses HTML, CSS styling, AJAX, Bootstrap and Javascript.
 Created by Radhakrishnan Pillai for LaunchCode Unit-3
